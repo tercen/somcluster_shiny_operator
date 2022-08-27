@@ -13,8 +13,7 @@ ui <- shinyUI(
       numericInput("xgrid", "X grid dimension", min = 1, step = 1, value = 2),
       numericInput("ygrid", "Y grid dimension", min = 1, step = 1, value = 2),
       selectInput("topo", "Grid type", choices = c("rectangular", "hexagonal"), selected = 1),
-      actionButton("done", "Return clusters to Tercen"),
-      h5(textOutput("msg"))
+      actionButton("done", "Return clusters to Tercen")
     ),
     
     mainPanel(

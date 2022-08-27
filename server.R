@@ -86,23 +86,23 @@ server <- shinyServer(function(input, output, session) {
     })
     
     m = mode()
+   # m = "run"
     if ( !is.null(m) && m == "run") {
       shinyjs::enable("done")
     }
     
     observeEvent(input$done, {
       shinyjs::disable("done")
-      msgReactive$msg = "Running ... please wait ..."
       tryCatch({
+        ctx = getCtx(session)
         dataInput() %>%
           left_join(clustern(), by = ".ri") %>%
           select(.ri, .ci, cluster) %>%
           ctx$addNamespace() %>%
           ctx$save()
-          msgReactive$msg = "Done"
+          
       }, error = function(e) {
-        msgReactive$msg = paste0("Failed : ", toString(e))
-        print(paste0("Failed : ", toString(e)))
+        showNotification(print(paste0("Failed : ", toString(e))), type = "error", closeButton = TRUE)
       })
     })
   })
