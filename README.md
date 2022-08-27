@@ -8,7 +8,6 @@ The `Som Cluster Shiny Operator` is a Tercen operator for performing data cluste
 
 Input projection|.
 ---|---
-
 `y-axis`        | numeric, data values
 `row`           | factor, factor(s) identifying single observations
 `column`        | factor, factor(s) identifying single variables
