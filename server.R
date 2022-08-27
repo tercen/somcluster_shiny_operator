@@ -30,8 +30,8 @@ server <- shinyServer(function(input, output, session) {
     getMode(session)
   })
   
-  
-  
+  pal = scale_color_jama()
+
   observe({
     shinyjs::disable("done")
     
@@ -81,7 +81,7 @@ server <- shinyServer(function(input, output, session) {
       prt = dataInput() %>%
         left_join(clustern(), by = ".ri") %>%
         ggplot(aes(x = lab, y = .y, colour = clr, group = .ri))
-      prt = prt + geom_line(alpha = 0.5) + scale_colour_jama()
+      prt = prt + geom_line(alpha = 0.2) + scale_colour_jama()
       prt + facet_grid(cluster ~.) + theme_bw()
     })
     
@@ -94,12 +94,12 @@ server <- shinyServer(function(input, output, session) {
       shinyjs::disable("done")
       msgReactive$msg = "Running ... please wait ..."
       tryCatch({
-        prt = dataInput() %>%
+        dataInput() %>%
           left_join(clustern(), by = ".ri") %>%
           select(.ri, .ci, cluster) %>%
           ctx$addNamespace() %>%
           ctx$save()
-        msgReactive$msg = "Done"
+          msgReactive$msg = "Done"
       }, error = function(e) {
         msgReactive$msg = paste0("Failed : ", toString(e))
         print(paste0("Failed : ", toString(e)))
