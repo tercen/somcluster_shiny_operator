@@ -1,8 +1,8 @@
 {
-  "name": "Template Shiny Operator",
-  "description": "Template to create a Shiny operator in Tercen.",
-  "tags": ["template"],
-  "authors": ["tercen"],
+  "name": "Som Cluster Shiny Operator",
+  "description": "Self organizing map clustering for Tercen",
+  "tags": ["SOM", "clustering"],
+  "authors": ["rik de wijn"],
   "urls": ["https://github.com/tercen/template-shiny-operator"],
-  "isViewOnly": true
+  "isViewOnly": false
 }
