@@ -19,6 +19,10 @@ Output relations|.
 `cluster`|cluster number for each observation
 `Operator view`        | view of the Shiny application
 
+##### Details
+See: https://tercen.com/Rik/w/27689e9ce71e1c1afb823c59ae9aaa04 for an example
+
+
 ##### Reference
 
 This operator uses the R-package `kohonen`
