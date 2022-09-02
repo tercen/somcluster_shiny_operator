@@ -97,6 +97,7 @@ server <- shinyServer(function(input, output, session) {
         ctx = getCtx(session)
         dataInput() %>%
           left_join(clustern(), by = ".ri") %>%
+          mutate(cluster = cluster %>% as.character()) %>%
           select(.ri, .ci, cluster) %>%
           ctx$addNamespace() %>%
           ctx$save()
