@@ -20,7 +20,11 @@ Output relations|.
 `Operator view`        | view of the Shiny application
 
 ##### Details
-See: https://tercen.com/Rik/w/27689e9ce71e1c1afb823c59ae9aaa04 for an example
+Examples:
+
+- https://tercen.com/Rik/w/27689e9ce71e1c1afb823c59ae9aaa04
+
+- https://tercen.com/Rik/w/53164e94522661d412d257c6f3c0c6ab
 
 
 ##### Reference
